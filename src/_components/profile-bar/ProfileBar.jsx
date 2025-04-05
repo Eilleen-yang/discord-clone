@@ -9,5 +9,5 @@ const MainDiv = styled.div`
 `;
 
 export default function ProfileBar() {
-  return <MainDiv>테스트용 글자</MainDiv>;
+  return <MainDiv>프로필 글자</MainDiv>;
 }

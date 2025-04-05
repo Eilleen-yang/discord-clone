@@ -1,6 +1,6 @@
 /* Discord Color */
 :root {
-  --main-bg-color: #2f3136;
+  --main-bg-color: #000;
   --channelList-bg-color: #2f3136;
   --memberList-bg-color: #2f3136;
   --message-bg-color: #36393f;
@@ -9,6 +9,7 @@
   --hover-bg-color: #424549;
   --active-bg-color: #7289da;
   --normal-txt-color: #99aab5;
-  --hover-txt-color: #ffffff;
-  --active-txt-color: #ffffff;
+  --main--txt-color: #fff;
+  --hover-txt-color: #fff;
+  --active-txt-color: #fff;
 }

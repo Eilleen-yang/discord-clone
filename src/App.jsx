@@ -1,44 +1,39 @@
 import "./reset.css";
 import "./App.css";
 import styled from "styled-components";
-import SideChannelList from "../src/compoenets/side-channel-list/SideChannelList";
-import Message from "../src/compoenets/message/Message";
-import SideMemberList from "../src/compoenets/side-member-list/SideMemberList";
-import ProfileBar from "../src/compoenets/profile-bar/ProfileBar";
+import SeverChannelContent from "./_components/Layout/ServerChannelContent";
+import TopSection from "./_components/Layout/TopSection";
+import ContentContainer from "./_components/Layout/ContentContainer";
+import ChannelContent from "./_components/Layout/ChannelContent";
+import MainContents from "./_components/Layout/MainContents";
+import MemberContent from "./_components/Layout/MemberContent";
+import ProfileContent from "./_components/Layout/ProfileContent";
 
-// styled-components 사용법
-// const 변수이름 = styled.태그종류 `안에 작성` < 백틱
-const MainDiv = styled.div`
-  background-color: var(--main-bg-color);
-  height: 100vh;
-  overflow: hidden;
-`;
-
-const MainContent = styled.div`
-  display: grid;
-  position: relative;
-  left: 4vw;
-  top: 4vh;
-  width: 96vw;
-  height: 96vh;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-top-left-radius: 20px;
-  box-sizing: border-box;
-  grid-template-columns: 1fr 3fr 1fr;
+const ContentSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 36px);
 `;
 
 function App() {
   return (
     <>
-      <MainDiv>
-        <MainContent className="MaiNContent">
-          <SideChannelList />
-          <Message />
-          <SideMemberList />
-        </MainContent>
-        <ProfileBar />
-      </MainDiv>
+      <TopSection />
+      <ContentSection>
+        <SeverChannelContent />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 3fr 1fr",
+          }}
+        >
+          <ChannelContent />
+          <MainContents />
+          <MemberContent />
+        </div>
+        <ProfileContent />
+      </ContentSection>
     </>
   );
 }

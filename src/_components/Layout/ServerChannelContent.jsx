@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import ServerContent from "../common/ServerContent";
 
 const ServerChannelContainer = styled.div`
   width: 72px;
@@ -7,5 +8,9 @@ const ServerChannelContainer = styled.div`
 `;
 
 export default function SeverChannelContent() {
-  return <ServerChannelContainer>서버채널영역</ServerChannelContainer>;
+  return (
+    <ServerChannelContainer>
+      <ServerContent />
+    </ServerChannelContainer>
+  );
 }

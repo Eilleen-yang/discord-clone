@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import ContentContainer from "./ContentContainer";
+import Chatting from "../../pages/Chatting";
 
 const MainContainer = styled.div`
   height: 100%;
@@ -9,7 +10,9 @@ const MainContainer = styled.div`
 export default function MainContents() {
   return (
     <ContentContainer style={{ background: "#000", color: "#000" }}>
-      <MainContainer>메인 영역</MainContainer>
+      <MainContainer>
+        <Chatting />
+      </MainContainer>
     </ContentContainer>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import MainContents from "../_components/Layout/MainContents";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = "https://vlowdzoigoyaudsydqam.supabase.co";
@@ -72,24 +71,20 @@ export default function Chatting() {
   }, [messages]);
 
   return (
-    <div className="MainBackground">
-      <div className="messagesList">
+    <div>
+      <div className="flex flex-row">
         {messages.map((msg) => (
           <div key={msg.id}>
-            <div className="message">
-              <img
-                className="profileIcon"
-                style={{ width: "40px", height: "30px" }}
-                src="./images/discord.png"
-              />
-              <div className="messageData">
-                <div className="nametime">
-                  <p className="name">{msg.name}</p>
-                  <p className="time">
+            <div>
+              <img className="w-[40px] h-[30px]" src="/public/logo.svg" />
+              <div>
+                <div>
+                  <p>{msg.name}</p>
+                  <p>
                     {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
                   </p>
                 </div>
-                <p className="text">{msg.message}</p>
+                <p>{msg.message}</p>
               </div>
             </div>
           </div>
@@ -97,9 +92,8 @@ export default function Chatting() {
         <div ref={messageRef} />
       </div>
 
-      <div className="inputBar">
+      <div>
         <input
-          className="input"
           type="text"
           placeholder="메시지를 입력하세요"
           value={message}

@@ -2,24 +2,21 @@ import "./reset.css";
 import "./App.css";
 import styled from "styled-components";
 import SeverChannelContent from "./_components/Layout/ServerChannelContent";
-import TopSection from "./_components/Layout/TopSection";
-import ContentContainer from "./_components/Layout/ContentContainer";
 import ChannelContent from "./_components/Layout/ChannelContent";
-import MainContents from "./_components/Layout/MainContents";
 import MemberContent from "./_components/Layout/MemberContent";
 import ProfileContent from "./_components/Layout/ProfileContent";
+import MainContents from "./_components/Layout/MainContents";
 
 const ContentSection = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: calc(100vh - 36px);
+  height: 100vh;
 `;
 
 function App() {
   return (
-    <>
-      <TopSection />
+    <div style={{ position: "relative" }}>
       <ContentSection>
         <SeverChannelContent />
         <div
@@ -34,7 +31,7 @@ function App() {
         </div>
         <ProfileContent />
       </ContentSection>
-    </>
+    </div>
   );
 }
 

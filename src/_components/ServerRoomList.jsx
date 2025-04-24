@@ -2,19 +2,62 @@ import { Link } from "react-router-dom";
 
 export default function ServerRoomList() {
   return (
-    <div className="w-[72px] h-full dark:bg-[var(--main-bg-color)]">
-      <div className="flex items-center flex-col gap-[8px] px-[16px]">
+    <div className="flex items-center flex-col gap-3 w-[72px] h-full dark:bg-[var(--main-bg-color)]">
+      <div>
         <Link
-          className="block w-[40px] h-[40px] bg-[var(--normal-txt-color)]"
+          className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
           to={"/server"}
         >
-          <img
-            src="/public/logo.svg"
-            alt="discode logo"
-            className="block w-[24px] h-[24px]"
-          />
+          <div className="w-[24px] h-[24px]">
+            <img src="/public/logo.svg" alt="discode logo" className="block" />
+          </div>
         </Link>
       </div>
+      <div className="px-6 border-b border-[var(--hover-bg-color)]"></div>
+      <ul className="w-full flex flex-col items-center gap-2">
+        <li>
+          <Link
+            className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
+            to={"/server"}
+          >
+            <div className="w-[24px] h-[24px]">
+              <img
+                src="/public/logo.svg"
+                alt="discode logo"
+                className="block"
+              />
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
+            to={"/server"}
+          >
+            <div className="w-[24px] h-[24px]">
+              <img
+                src="/public/logo.svg"
+                alt="discode logo"
+                className="block"
+              />
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
+            to={"/server"}
+          >
+            <div className="w-[24px] h-[24px]">
+              <img
+                src="/public/logo.svg"
+                alt="discode logo"
+                className="block"
+              />
+            </div>
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }

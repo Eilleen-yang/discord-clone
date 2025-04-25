@@ -1,7 +1,9 @@
+import Channel from "../_components/Channel";
+import MemberList from "../_components/MemberList";
 import ModeButton from "../_components/ModeButton";
-import ServerRoomList from "../_components/ServerRoomList";
 import ProfileFiexd from "../_components/ProfileFiexd";
-import ChannelContent from "./ChannelContent";
+import MainContents from "./MainContents";
+import Sidebar from "./Sidebar";
 
 export default function Layout() {
   return (
@@ -9,16 +11,14 @@ export default function Layout() {
       <div className="w-full h-[3.6rem] leading-[3.6rem] text-[1.4rem] text-black dark:text-white text-center">
         <span className="block">양아름님의 서버</span>
       </div>
-      <div className="flex flex-row w-full h-[calc(100%-36px)]">
-        <ServerRoomList />
+      <div className="flex flex-row w-full h-[calc(100%-3.6rem)]">
+        <div className="flex w-[37.5rem]">
+          <Channel />
+          <Sidebar />
+        </div>
         <div className="flex w-full text-black">
-          <div className="flex-1/7">dddd</div>
-          {/* <ChannelContent /> */}
-          <div className="flex-1/2">dddd</div>
-          <div className="flex-1/6">dddd</div>
-          {/* 
           <MainContents />
-          <MemberContent />*/}
+          <MemberList />
         </div>
       </div>
       <ProfileFiexd />

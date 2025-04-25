@@ -1,6 +1,6 @@
 export default function ProfileContent() {
   return (
-    <div className="flex items-center justify-between p-4 absolute left-2 bottom-2 w-[36rem] h-[5.8rem] bg-[var(--profilebar-bg-color)] rounded-xl">
+    <div className="flex items-center justify-between p-4 absolute left-3 bottom-3 w-[36rem] h-[5.8rem] bg-[var(--profilebar-bg-color)] rounded-xl">
       <div className="flex gap-4 items-center">
         <img
           src="/public/vite.svg"

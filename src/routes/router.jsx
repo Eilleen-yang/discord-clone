@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ServerRoomList from "../_components/ServerRoomList";
+import ServerRoomList from "../_components/Channel";
 
 const router = createBrowserRouter([
   {

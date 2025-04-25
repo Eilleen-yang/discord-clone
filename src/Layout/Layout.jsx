@@ -1,4 +1,5 @@
 import Channel from "../_components/Channel";
+import MainContentHeader from "../_components/MainContentHeader";
 import MemberList from "../_components/MemberList";
 import ModeButton from "../_components/ModeButton";
 import ProfileFiexd from "../_components/ProfileFiexd";
@@ -11,14 +12,17 @@ export default function Layout() {
       <div className="w-full h-[3.6rem] leading-[3.6rem] text-[1.4rem] text-black dark:text-white text-center">
         <span className="block">양아름님의 서버</span>
       </div>
-      <div className="flex flex-row w-full h-[calc(100%-3.6rem)]">
-        <div className="flex w-[37.5rem]">
+      <div className="flex flex-row w-full">
+        <div className="flex w-[37.5rem] h-[calc(100dvh-3.2rem)]">
           <Channel />
           <Sidebar />
         </div>
-        <div className="flex w-full text-black">
-          <MainContents />
-          <MemberList />
+        <div className="w-full text-black">
+          <MainContentHeader />
+          <div className="flex">
+            <MainContents />
+            <MemberList />
+          </div>
         </div>
       </div>
       <ProfileFiexd />

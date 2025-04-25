@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { Link } from "react-router-dom";
 
 const supabaseUrl = "https://vlowdzoigoyaudsydqam.supabase.co";
 const supabaseKey =
@@ -72,28 +73,40 @@ export default function Chatting() {
 
   return (
     <div>
-      <div className="flex flex-row">
+      <ul className="flex flex-col gap-5 pl-1 h-[calc(100dvh-14.8rem)] overflow-y-auto">
         {messages.map((msg) => (
-          <div key={msg.id}>
-            <div>
-              <img className="w-[40px] h-[30px]" src="/public/logo.svg" />
-              <div>
-                <div>
-                  <p>{msg.name}</p>
-                  <p>
-                    {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
-                  </p>
-                </div>
-                <p>{msg.message}</p>
+          <li key={msg.id} className="flex gap-4 items-center">
+            <Link
+              className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] rounded-full"
+              to={"/channel/:username"}
+            >
+              <div className="w-[24px] h-[24px]">
+                <img
+                  src="/public/logo.svg"
+                  alt="discode logo"
+                  className="block"
+                />
               </div>
+            </Link>
+            <div className="w-full text-black dark:text-white hover:bg-[var(--hover-bg-color)]">
+              <div className="flex gap-2 items-end">
+                <Link to={"/channel/:username"} className="text-xl">
+                  {msg.name}
+                </Link>
+                <p>
+                  {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
+                </p>
+              </div>
+              <p className="text-2xl">{msg.message}</p>
             </div>
-          </div>
+          </li>
         ))}
         <div ref={messageRef} />
-      </div>
+      </ul>
 
-      <div>
+      <div className="w-full h-[5.8rem] border border-[var(--hover-bg-color)] rounded-xl z-10 bg-white dark:bg-black text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)]">
         <input
+          className="w-full h-full px-6 text-2xl"
           type="text"
           placeholder="메시지를 입력하세요"
           value={message}

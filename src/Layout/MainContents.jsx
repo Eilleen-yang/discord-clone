@@ -1,12 +1,9 @@
-import ContentContainer from "./ContentContainer";
-import Chatting from "../../pages/Chatting";
+import Chatting from "../pages/Chatting";
 
 export default function MainContents() {
   return (
-    <ContentContainer>
-      <div className="h-full bg-[var(--main-bg-color)]">
-        <Chatting />
-      </div>
-    </ContentContainer>
+    <div className="flex-1/2 px-4 pb-4 h-full bg-white dark:bg-[var(--main-bg-color)] border-l border-l-[var(--hover-bg-color)]">
+      <Chatting />
+    </div>
   );
 }

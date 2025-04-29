@@ -73,9 +73,9 @@ export default function Chatting() {
 
   return (
     <div>
-      <ul className="flex flex-col gap-5 pl-1 h-[calc(100dvh-14.8rem)] overflow-y-auto">
+      <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-14.8rem)] overflow-y-auto">
         {messages.map((msg) => (
-          <li key={msg.id} className="flex gap-4 items-center">
+          <li key={msg.id} className="flex gap-2 items-center">
             <Link
               className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] rounded-full"
               to={"/channel/:username"}
@@ -88,7 +88,7 @@ export default function Chatting() {
                 />
               </div>
             </Link>
-            <div className="w-full text-black dark:text-white hover:bg-[var(--hover-bg-color)]">
+            <div className="pl-2 w-full text-black dark:text-white hover:text-white hover:bg-[var(--hover-bg-color)]">
               <div className="flex gap-2 items-end">
                 <Link to={"/channel/:username"} className="text-xl">
                   {msg.name}

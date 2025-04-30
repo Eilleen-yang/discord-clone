@@ -53,7 +53,8 @@ export default function MemberList() {
             <li>
               <button className="flex gap-4 items-center">
                 <img
-                  src="/src/assets/vite.svg"
+                  src={import.meta.env.VITE_BASE_URL + "/vite.svg"}
+                  // src="/src/assets/vite.svg"
                   alt="user profile img"
                   className="block w-[4rem] h-[4rem] rounded-full"
                 />

@@ -82,7 +82,7 @@ export default function Chatting() {
             >
               <div className="w-[24px] h-[24px]">
                 <img
-                  src="/src/assets/logo.svg"
+                  src="/assets/logo.svg"
                   alt="discode logo"
                   className="block"
                 />

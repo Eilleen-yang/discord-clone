@@ -1,3 +1,5 @@
+import profileImg from "../assets/vite.svg";
+
 export default function MemberList() {
   return (
     <div className="flex-1/7 dark:bg-[var(--main-bg-color)] border-l border-[var(--hover-bg-color)]">
@@ -10,7 +12,7 @@ export default function MemberList() {
             <li>
               <button className="flex gap-4 items-center">
                 <img
-                  src="../assets/vite.svg"
+                  src={profileImg}
                   alt="user profile img"
                   className="block w-[4rem] h-[4rem] rounded-full"
                 />
@@ -22,7 +24,7 @@ export default function MemberList() {
             <li>
               <button className="flex gap-4 items-center">
                 <img
-                  src="../assets/vite.svg"
+                  src={profileImg}
                   alt="user profile img"
                   className="block w-[4rem] h-[4rem] rounded-full"
                 />
@@ -34,7 +36,7 @@ export default function MemberList() {
             <li>
               <button className="flex gap-4 items-center">
                 <img
-                  src="../assets/vite.svg"
+                  src={profileImg}
                   alt="user profile img"
                   className="block w-[4rem] h-[4rem] rounded-full"
                 />
@@ -53,8 +55,7 @@ export default function MemberList() {
             <li>
               <button className="flex gap-4 items-center">
                 <img
-                  // src={import.meta.env.VITE_BASE_URL + "/vite.svg"}
-                  src="../assets/vite.svg"
+                  src={profileImg}
                   alt="user profile img"
                   className="block w-[4rem] h-[4rem] rounded-full"
                 />

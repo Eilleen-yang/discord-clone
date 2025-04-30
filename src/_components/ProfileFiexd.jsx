@@ -1,4 +1,6 @@
 import tokeImg from "../assets/toke.svg";
+import muteImg from "../assets/mute.svg";
+import settingImg from "../assets/setting.svg";
 
 export default function ProfileContent() {
   return (
@@ -19,10 +21,10 @@ export default function ProfileContent() {
           <img src={tokeImg} alt="말하기 활성화/비활성화 버튼" />
         </button>
         <button>
-          <img src="../assets/mute.svg" alt="듣기 활성화/비활성화 버튼" />
+          <img src={muteImg} alt="듣기 활성화/비활성화 버튼" />
         </button>
         <button>
-          <img src="../assets/setting.svg" alt="프로필 셋팅 버튼" />
+          <img src={settingImg} alt="프로필 셋팅 버튼" />
         </button>
       </div>
     </div>

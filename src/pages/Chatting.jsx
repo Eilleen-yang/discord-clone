@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Link } from "react-router-dom";
+import logoImg from "../assets/logo.svg";
 
 const supabaseUrl = "https://vlowdzoigoyaudsydqam.supabase.co";
 const supabaseKey =
@@ -81,11 +82,7 @@ export default function Chatting() {
               to={"/channel/:username"}
             >
               <div className="w-[24px] h-[24px]">
-                <img
-                  src="../assets/logo.svg"
-                  alt="discode logo"
-                  className="block"
-                />
+                <img src={logoImg} alt="discode logo" className="block" />
               </div>
             </Link>
             <div className="pl-2 w-full text-black dark:text-white hover:text-white hover:bg-[var(--hover-bg-color)]">

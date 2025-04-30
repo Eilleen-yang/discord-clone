@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoImg from "../assets/logo.svg";
 
 export default function Channel() {
   return (
@@ -9,11 +10,7 @@ export default function Channel() {
           to={"/server"}
         >
           <div className="w-[24px] h-[24px]">
-            <img
-              src="../assets/logo.svg"
-              alt="discode logo"
-              className="block"
-            />
+            <img src={logoImg} alt="discode logo" className="block" />
           </div>
         </Link>
       </div>
@@ -25,11 +22,7 @@ export default function Channel() {
             to={"/server"}
           >
             <div className="w-[24px] h-[24px]">
-              <img
-                src="../assets/logo.svg"
-                alt="discode logo"
-                className="block"
-              />
+              <img src={logoImg} alt="discode logo" className="block" />
             </div>
           </Link>
         </li>
@@ -39,11 +32,7 @@ export default function Channel() {
             to={"/server"}
           >
             <div className="w-[24px] h-[24px]">
-              <img
-                src="../assets/logo.svg"
-                alt="discode logo"
-                className="block"
-              />
+              <img src={logoImg} alt="discode logo" className="block" />
             </div>
           </Link>
         </li>
@@ -53,11 +42,7 @@ export default function Channel() {
             to={"/server"}
           >
             <div className="w-[24px] h-[24px]">
-              <img
-                src="../assets/logo.svg"
-                alt="discode logo"
-                className="block"
-              />
+              <img src={logoImg} alt="discode logo" className="block" />
             </div>
           </Link>
         </li>

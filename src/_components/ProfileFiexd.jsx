@@ -1,3 +1,4 @@
+import profileImg from "../assets/vite.svg";
 import tokeImg from "../assets/toke.svg";
 import muteImg from "../assets/mute.svg";
 import settingImg from "../assets/setting.svg";
@@ -7,7 +8,7 @@ export default function ProfileContent() {
     <div className="flex items-center justify-between p-4 absolute left-3 bottom-3 w-[36rem] h-[5.8rem] bg-[var(--profilebar-bg-color)] rounded-xl">
       <button className="flex gap-4 items-center">
         <img
-          src="/src/assets/vite.svg"
+          src={profileImg}
           alt="user profile img"
           className="block w-[4rem] h-[4rem] rounded-full"
         />

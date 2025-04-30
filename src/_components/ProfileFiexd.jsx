@@ -3,7 +3,7 @@ export default function ProfileContent() {
     <div className="flex items-center justify-between p-4 absolute left-3 bottom-3 w-[36rem] h-[5.8rem] bg-[var(--profilebar-bg-color)] rounded-xl">
       <button className="flex gap-4 items-center">
         <img
-          src="/public/vite.svg"
+          src="/src/assets/vite.svg"
           alt="user profile img"
           className="block w-[4rem] h-[4rem] rounded-full"
         />
@@ -14,13 +14,13 @@ export default function ProfileContent() {
       </button>
       <div className="flex gap-4">
         <button>
-          <img src="/public/toke.svg" alt="말하기 활성화/비활성화 버튼" />
+          <img src="/src/assets/toke.svg" alt="말하기 활성화/비활성화 버튼" />
         </button>
         <button>
-          <img src="/public/mute.svg" alt="듣기 활성화/비활성화 버튼" />
+          <img src="/src/assets/mute.svg" alt="듣기 활성화/비활성화 버튼" />
         </button>
         <button>
-          <img src="/public/setting.svg" alt="프로필 셋팅 버튼" />
+          <img src="/src/assets/setting.svg" alt="프로필 셋팅 버튼" />
         </button>
       </div>
     </div>

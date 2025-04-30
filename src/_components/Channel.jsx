@@ -10,7 +10,7 @@ export default function Channel() {
         >
           <div className="w-[24px] h-[24px]">
             <img
-              src={import.meta.env.VITE_BASE_URL + "/logo.svg"}
+              src="/src/assets/logo.svg"
               alt="discode logo"
               className="block"
             />
@@ -26,7 +26,7 @@ export default function Channel() {
           >
             <div className="w-[24px] h-[24px]">
               <img
-                src="/public/logo.svg"
+                src="/src/assets/logo.svg"
                 alt="discode logo"
                 className="block"
               />
@@ -40,7 +40,7 @@ export default function Channel() {
           >
             <div className="w-[24px] h-[24px]">
               <img
-                src="/public/logo.svg"
+                src="/src/assets/logo.svg"
                 alt="discode logo"
                 className="block"
               />
@@ -54,7 +54,7 @@ export default function Channel() {
           >
             <div className="w-[24px] h-[24px]">
               <img
-                src="/public/logo.svg"
+                src="/src/assets/logo.svg"
                 alt="discode logo"
                 className="block"
               />

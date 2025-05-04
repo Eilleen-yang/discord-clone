@@ -1,38 +1,60 @@
-import { Arrow } from "../_components/Icons";
+import {
+  ArrowIcon,
+  EventIcon,
+  ShapIcon,
+  VoiceIcon,
+} from "../_components/Icons";
 
 export default function Sidebar() {
   return (
-    <div className="w-[30.4rem] bg-white dark:bg-[var(--main-bg-color)] text-black dark:text-white border-[var(--hover-bg-color)] border-l border-t rounded-tl-3xl">
-      <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)]">
+    <div className="w-[30.4rem] bg-white dark:bg-[var(--main-bg-color)] text-[var(--hover-bg-color)] border-[var(--hover-bg-color)] border-l border-t rounded-tl-3xl">
+      <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] hover:dark:text-white rounded-tl-3xl">
         <button className="w-full h-full leading-[47.4px] flex justify-between items-center text-2xl font-bold">
           <span>구름 FE3 4월팀 스터디</span>
-          <Arrow width={14} height={14} color={"#000 var(--main-bg-white)"} />
+          <ArrowIcon width={14} height={14} />
         </button>
       </div>
-      <div className="">
-        <button>이벤트</button>
+      <div className="pl-2 pt-2 pb-2 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] font-semibold">
+        <div className="flex gap-2 items-center pl-2 w-full h-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] hover:dark:text-white text-2xl rounded-lg cursor-pointer">
+          <EventIcon width={18} height={18} />
+          <button>이벤트</button>
+        </div>
       </div>
       <div>
-        <ul>
-          <li className="flex items-center gap-2">
-            <span className="text-xl font-semibold">채팅 채널</span>
-            <button>
-              <Arrow
-                width={12}
-                height={12}
-                color={"#000 var(--main-bg-white)"}
-              />
-            </button>
+        <ul className="pl-4 font-semibold">
+          <li className="flex gap-2 flex-col">
+            <div className="pt-4 w-fit hover:text-black dark:hover:text-white cursor-pointer">
+              <span className="text-xl">채팅 채널</span>
+              <button className="ml-2">
+                <ArrowIcon width={12} height={12} />
+              </button>
+            </div>
+            <ul className="text-2xl">
+              <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                <ShapIcon width={18} height={18} />
+                <span>공지</span>
+              </li>
+              <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                <ShapIcon width={18} height={18} />
+                <span>일반</span>
+              </li>
+            </ul>
           </li>
-          <li className="flex items-center gap-2">
-            <span className="text-xl font-semibold">음성 채널</span>
-            <button>
-              <Arrow
-                width={12}
-                height={12}
-                color={"#000 var(--main-bg-white)"}
-              />
-            </button>
+          <li className="flex gap-2 flex-col pt-4">
+            <div className="pt-4 w-fit hover:text-black dark:hover:text-white cursor-pointer">
+              <span className="text-xl">음성 채널</span>
+              <button className="ml-2">
+                <ArrowIcon width={12} height={12} />
+              </button>
+            </div>
+            <ul className="text-2xl">
+              <li className="flex h-12">
+                <div className="flex items-center gap-2 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                  <VoiceIcon width={18} height={18} />
+                  <span>일반</span>
+                </div>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

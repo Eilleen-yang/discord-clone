@@ -5,7 +5,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fill: (theme) => theme("colors"),
+      fill: (theme) => theme("color"),
       colors: {
         light: {
           text: {

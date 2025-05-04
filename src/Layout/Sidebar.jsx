@@ -3,12 +3,12 @@ import {
   EventIcon,
   ShapIcon,
   VoiceIcon,
-} from "../_components/Icons";
+} from "../_components/icons/channel.jsx";
 
 export default function Sidebar() {
   return (
     <div className="w-[30.4rem] bg-white dark:bg-[var(--main-bg-color)] text-[var(--hover-bg-color)] border-[var(--hover-bg-color)] border-l border-t rounded-tl-3xl">
-      <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] hover:dark:text-white rounded-tl-3xl">
+      <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:text-white rounded-tl-3xl">
         <button className="w-full h-full leading-[47.4px] flex justify-between items-center text-2xl font-bold">
           <span>구름 FE3 4월팀 스터디</span>
           <ArrowIcon width={14} height={14} />

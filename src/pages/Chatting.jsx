@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Link } from "react-router-dom";
-import logoImg from "../assets/logo.svg";
+import { LogoColorIcon } from "../_components/icons/logo";
 
 const supabaseUrl = "https://vlowdzoigoyaudsydqam.supabase.co";
 const supabaseKey =
@@ -76,25 +76,29 @@ export default function Chatting() {
     <div>
       <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-14.8rem)] overflow-y-auto">
         {messages.map((msg) => (
-          <li key={msg.id} className="flex gap-2 items-center">
+          <li
+            key={msg.id}
+            className="flex gap-2 items-center text-[var(--hover-bg-color)] dark:text-white hover:bg-blue-50 dark:hover:bg-[var(--hover-bg-color)] rounded-lg"
+          >
             <Link
-              className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] rounded-full"
+              className="flex items-center justify-center w-[40px] h-[40px] rounded-full"
               to={"/channel/:username"}
             >
-              <div className="w-[24px] h-[24px]">
-                <img src={logoImg} alt="discode logo" className="block" />
-              </div>
+              <LogoColorIcon />
             </Link>
-            <div className="pl-2 w-full text-black dark:text-white hover:text-white hover:bg-[var(--hover-bg-color)]">
+            <div className="pl-2 w-full">
               <div className="flex gap-2 items-end">
-                <Link to={"/channel/:username"} className="text-xl">
+                <Link
+                  to={"/channel/:username"}
+                  className="block font-semibold text-xl"
+                >
                   {msg.name}
                 </Link>
                 <p>
                   {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
                 </p>
               </div>
-              <p className="text-2xl">{msg.message}</p>
+              <p className="text-2xl font-medium">{msg.message}</p>
             </div>
           </li>
         ))}

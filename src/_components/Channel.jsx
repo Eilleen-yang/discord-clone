@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import logoImg from "../assets/logo.svg";
+import { CircleIcon } from "./icons/channel";
+import { Logo } from "./icons/logo";
 
 export default function Channel() {
   return (
@@ -9,9 +11,7 @@ export default function Channel() {
           className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
           to={"/server"}
         >
-          <div className="w-[24px] h-[24px]">
-            <img src={logoImg} alt="discode logo" className="block" />
-          </div>
+          <Logo />
         </Link>
       </div>
       <div className="px-6 border-b border-[var(--hover-bg-color)]"></div>
@@ -21,30 +21,13 @@ export default function Channel() {
             className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
             to={"/server"}
           >
-            <div className="w-[24px] h-[24px]">
-              <img src={logoImg} alt="discode logo" className="block" />
-            </div>
+            <Logo />
           </Link>
         </li>
         <li>
-          <Link
-            className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
-            to={"/server"}
-          >
-            <div className="w-[24px] h-[24px]">
-              <img src={logoImg} alt="discode logo" className="block" />
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
-            to={"/server"}
-          >
-            <div className="w-[24px] h-[24px]">
-              <img src={logoImg} alt="discode logo" className="block" />
-            </div>
-          </Link>
+          <button className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl">
+            <CircleIcon width={18} height={18} />
+          </button>
         </li>
       </ul>
     </div>

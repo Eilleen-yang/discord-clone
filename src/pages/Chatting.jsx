@@ -73,8 +73,8 @@ export default function Chatting() {
   }, [messages]);
 
   return (
-    <div>
-      <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-14.8rem)] overflow-y-auto">
+    <div className="pt-4">
+      <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-16rem)] overflow-y-auto">
         {messages.map((msg) => (
           <li
             key={msg.id}

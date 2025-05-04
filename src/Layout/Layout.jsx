@@ -13,7 +13,7 @@ export default function Layout() {
         <span className="block">양아름님의 서버</span>
       </div>
       <div className="flex flex-row w-full">
-        <div className="flex w-[37.5rem] h-[calc(100dvh-3.2rem)]">
+        <div className="flex w-[37.5rem] h-[calc(100dvh-3.4rem)]">
           <Channel />
           <Sidebar />
         </div>

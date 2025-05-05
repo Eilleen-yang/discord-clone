@@ -9,10 +9,10 @@ import Sidebar from "./Sidebar";
 
 export default function Layout() {
   return (
-    <div className="relative bg-white dark:bg-black w-full h-[100dvh]">
+    <div className="relative w-full h-[100dvh] transition-colors duration-300 bg-white dark:bg-[#121212]">
       <TopServerName />
       <div className="flex flex-row w-full">
-        <div className="flex w-[37.5rem] h-[calc(100dvh-3.4rem)]">
+        <div className="flex w-[37.5rem] h-[calc(100dvh-3.8rem)]">
           <Channel />
           <Sidebar />
         </div>

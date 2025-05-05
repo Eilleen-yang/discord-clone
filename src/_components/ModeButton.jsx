@@ -1,18 +1,20 @@
+import { useEffect } from "react";
+import { useThemeStore } from "../store/useThemeStore";
+
 export default function ModeButton() {
-  const onModeChangeClick = () => {
-    if (document.documentElement.getAttribute("data-theme") === "dark") {
-      document.documentElement.setAttribute("data-theme", "light");
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  };
+  const { theme, toggleThemeMode } = useThemeStore();
+
+  useEffect(() => {
+    document.documentElement.getAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
-    <div className="absolute right-[10px] top-[10px]">
+    <div className="absolute right-[10px] bottom-[10px]">
       <button
-        className="block text-black dark:text-[var(--main-txt-color)] text-xl font-semibold"
-        onClick={onModeChangeClick}
+        className="flex items-center justify-center w-20 h-20 dark:bg-white bg-[var(--hover-bg-color)] text-white rounded-full dark:text-[var(--hover-bg-color)] text-xl font-semibold hover:shadow-[0_5px_15px_rgba(0,0,0,0.25)] hover:shadow-blue-950 dark:hover:shadow-[0_5px_15px_rgba(255,255,255,0.25)] dark:hover:shadow-white transition-shadow duration-300"
+        onClick={toggleThemeMode}
       >
-        모드 전환
+        <span>{theme}</span>
       </button>
     </div>
   );

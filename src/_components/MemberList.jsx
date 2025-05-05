@@ -10,7 +10,7 @@ const user = [
 
 export default function MemberList() {
   return (
-    <div className="flex-1/7 px-4 dark:bg-[var(--main-bg-color)] border-l border-[var(--hover-bg-color)]">
+    <div className="flex-1/7 px-4 border-l border-[var(--hover-bg-color)]">
       <ul className="flex flex-col gap-8 mt-4 dark:text-[var(--main--txt-color)]">
         <li className="flex flex-col gap-4">
           <strong className="text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)] text-xl">

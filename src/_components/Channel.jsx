@@ -5,7 +5,7 @@ import { Logo } from "./icons/logo";
 
 export default function Channel() {
   return (
-    <div className="flex items-center flex-col gap-3 w-[7.2rem] h-full dark:bg-[var(--main-bg-color)]">
+    <div className="flex items-center flex-col gap-3 w-[7.2rem] h-full">
       <div>
         <Link
           className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"

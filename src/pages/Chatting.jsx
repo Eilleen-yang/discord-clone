@@ -74,7 +74,7 @@ export default function Chatting() {
 
   return (
     <div className="pt-4">
-      <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-16rem)] overflow-y-auto">
+      <ul className="flex flex-col gap-4 pl-1 h-[calc(100dvh-16.2rem)] overflow-y-auto">
         {messages.map((msg) => (
           <li
             key={msg.id}
@@ -105,7 +105,7 @@ export default function Chatting() {
         <div ref={messageRef} />
       </ul>
 
-      <div className="w-full h-[5.8rem] border border-[var(--hover-bg-color)] rounded-xl z-10 bg-white dark:bg-black text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)]">
+      <div className="w-full h-[5.8rem] border border-[var(--hover-bg-color)] rounded-xl z-10 text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)]">
         <input
           className="w-full h-full px-6 text-2xl"
           type="text"

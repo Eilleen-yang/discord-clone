@@ -1,12 +1,7 @@
-import { useEffect } from "react";
-import { useThemeStore } from "../store/useThemeStore";
+import { useThemeStore } from "../stores/useThemeStore";
 
 export default function ModeButton() {
   const { theme, toggleThemeMode } = useThemeStore();
-
-  useEffect(() => {
-    document.documentElement.getAttribute("data-theme", theme);
-  }, [theme]);
 
   return (
     <div className="absolute right-[10px] bottom-[10px]">

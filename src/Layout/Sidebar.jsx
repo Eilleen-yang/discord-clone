@@ -15,7 +15,9 @@ export default function Sidebar() {
       <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:text-white rounded-tl-3xl">
         <button className="w-full h-full leading-[47.4px] flex justify-between items-center text-2xl font-bold">
           <span>구름 FE3 4월팀 스터디</span>
-          <ArrowIcon width={14} height={14} />
+          <div className="rotate-90">
+            <ArrowIcon width={14} height={14} />
+          </div>
         </button>
       </div>
       <div className="pl-2 pt-2 pb-2 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] font-semibold">
@@ -32,7 +34,11 @@ export default function Sidebar() {
               className="flex justify-between items-center pt-4 w-full hover:text-black dark:hover:text-white cursor-pointer"
             >
               <span className="block text-xl">채팅 채널</span>
-              <div className="ml-2">
+              <div
+                className={`ml-2 transition-transform duration-200 ease-in-out ${
+                  isChatOpen ? "rotate-0" : "rotate-90"
+                }`}
+              >
                 <ArrowIcon width={12} height={12} />
               </div>
             </button>
@@ -55,7 +61,11 @@ export default function Sidebar() {
               className="pt-4 flex justify-between w-full hover:text-black dark:hover:text-white cursor-pointer"
             >
               <span className="text-xl">음성 채널</span>
-              <div className="ml-2">
+              <div
+                className={`ml-2 transition-transform duration-200 ease-in-out ${
+                  isVoiceOpen ? "rotate-0" : "rotate-90"
+                }`}
+              >
                 <ArrowIcon width={12} height={12} />
               </div>
             </button>

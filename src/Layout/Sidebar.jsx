@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowIcon,
   EventIcon,
@@ -6,6 +7,9 @@ import {
 } from "../_components/icons/channel.jsx";
 
 export default function Sidebar() {
+  const [isChatOpen, setIstChatOpen] = useState(true);
+  const [isVoiceOpen, setIsVoiceOpen] = useState(true);
+
   return (
     <div className="w-[30.4rem] text-[var(--hover-bg-color)] border-[var(--hover-bg-color)] border-l border-t rounded-tl-3xl">
       <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:text-white rounded-tl-3xl">
@@ -21,40 +25,50 @@ export default function Sidebar() {
         </div>
       </div>
       <div>
-        <ul className="pl-4 font-semibold">
+        <ul className="pl-4 pr-4 font-semibold">
           <li className="flex gap-2 flex-col">
-            <div className="pt-4 w-fit hover:text-black dark:hover:text-white cursor-pointer">
-              <span className="text-xl">채팅 채널</span>
-              <button className="ml-2">
+            <button
+              onClick={() => setIstChatOpen((perv) => !perv)}
+              className="flex justify-between items-center pt-4 w-full hover:text-black dark:hover:text-white cursor-pointer"
+            >
+              <span className="block text-xl">채팅 채널</span>
+              <div className="ml-2">
                 <ArrowIcon width={12} height={12} />
-              </button>
-            </div>
-            <ul className="text-2xl">
-              <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
-                <ShapIcon width={18} height={18} />
-                <span>공지</span>
-              </li>
-              <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
-                <ShapIcon width={18} height={18} />
-                <span>일반</span>
-              </li>
-            </ul>
+              </div>
+            </button>
+            {isChatOpen && (
+              <ul className="text-2xl">
+                <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                  <ShapIcon width={18} height={18} />
+                  <span>공지</span>
+                </li>
+                <li className="flex items-center gap-2 h-12 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                  <ShapIcon width={18} height={18} />
+                  <span>일반</span>
+                </li>
+              </ul>
+            )}
           </li>
           <li className="flex gap-2 flex-col pt-4">
-            <div className="pt-4 w-fit hover:text-black dark:hover:text-white cursor-pointer">
+            <button
+              onClick={() => setIsVoiceOpen((prev) => !prev)}
+              className="pt-4 flex justify-between w-full hover:text-black dark:hover:text-white cursor-pointer"
+            >
               <span className="text-xl">음성 채널</span>
-              <button className="ml-2">
+              <div className="ml-2">
                 <ArrowIcon width={12} height={12} />
-              </button>
-            </div>
-            <ul className="text-2xl">
-              <li className="flex h-12">
-                <div className="flex items-center gap-2 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
-                  <VoiceIcon width={18} height={18} />
-                  <span>일반</span>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </button>
+            {isVoiceOpen && (
+              <ul className="text-2xl">
+                <li className="flex h-12">
+                  <div className="flex items-center gap-2 pl-1 w-full hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:hover:text-white rounded-lg cursor-pointer">
+                    <VoiceIcon width={18} height={18} />
+                    <span>일반</span>
+                  </div>
+                </li>
+              </ul>
+            )}
           </li>
         </ul>
       </div>

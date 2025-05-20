@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 /* eslint-env node */
-module.exports = {
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   darkMode: "data-theme",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -31,4 +35,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+});

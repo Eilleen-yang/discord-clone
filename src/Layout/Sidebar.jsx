@@ -6,18 +6,19 @@ import {
   VoiceIcon,
 } from "../_components/icons/channel.jsx";
 
-export default function Sidebar() {
+export default function Sidebar({ initialValues }) {
   const [isChatOpen, setIstChatOpen] = useState(true);
   const [isVoiceOpen, setIsVoiceOpen] = useState(true);
+
+  const channelName = initialValues[0].serverName;
+  console.log(initialValues);
 
   return (
     <div className="w-[30.4rem] text-[var(--hover-bg-color)] border-[var(--hover-bg-color)] border-l border-t rounded-tl-3xl">
       <div className="pl-4 pr-4 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] hover:bg-blue-50 dark:hover:bg-[var(--channelList-bg-color)] dark:text-white rounded-tl-3xl">
         <button className="w-full h-full leading-[47.4px] flex justify-between items-center text-2xl font-bold">
-          <span>구름 FE3 4월팀 스터디</span>
-          <div className="rotate-90">
-            <ArrowIcon width={14} height={14} />
-          </div>
+          <span>{channelName}</span>
+          <ArrowIcon width={14} height={14} />
         </button>
       </div>
       <div className="pl-2 pt-2 pb-2 w-full h-[47.4px] border-b border-b-black dark:border-b-[var(--hover-bg-color)] font-semibold">

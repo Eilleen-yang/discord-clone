@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Channel from "../_components/Channel";
+import MainContents from "../pages/MainContents";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -8,12 +9,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        index: true,
+        element: <Home />,
+      },
+      {
         path: "channels/@me",
-        element: <Channel />,
+        element: <MainContents />,
       },
       {
         path: "channels/:serverId",
-        element: <Channel />,
+        element: <MainContents />,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Link } from "react-router-dom";
-import { LogoColorIcon } from "../_components/icons/logo";
+import { LogoColorIcon } from "./icons/logo";
 
 const supabaseUrl = "https://vlowdzoigoyaudsydqam.supabase.co";
 const supabaseKey =
@@ -73,49 +73,51 @@ export default function Chatting() {
   }, [messages]);
 
   return (
-    <div className="pt-4">
-      <ul className="flex flex-col gap-8 pl-1 h-[calc(100dvh-16.2rem)] overflow-y-auto">
-        {messages.map((msg) => (
-          <li
-            key={msg.id}
-            className="flex gap-2 items-center text-[var(--hover-bg-color)] dark:text-white hover:bg-blue-50 dark:hover:bg-[var(--hover-bg-color)] rounded-lg"
-          >
-            <Link
-              className="flex items-center justify-center w-[40px] h-[40px] rounded-full"
-              to={"/channel/:username"}
+    <div className="flex-1/2 px-4 pb-4 h-full border-l border-l-[var(--hover-bg-color)]">
+      <div className="pt-4">
+        <ul className="flex flex-col gap-8 pl-1 h-[calc(100dvh-16.2rem)] overflow-y-auto">
+          {messages.map((msg) => (
+            <li
+              key={msg.id}
+              className="flex gap-2 items-center text-[var(--hover-bg-color)] dark:text-white hover:bg-blue-50 dark:hover:bg-[var(--hover-bg-color)] rounded-lg"
             >
-              <LogoColorIcon />
-            </Link>
-            <div className="pl-2 w-full">
-              <div className="flex gap-2 items-end">
-                <Link
-                  to={"/channel/:username"}
-                  className="block font-semibold text-xl"
-                >
-                  {msg.name}
-                </Link>
-                <p>
-                  {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
-                </p>
+              <Link
+                className="flex items-center justify-center w-[40px] h-[40px] rounded-full"
+                to={"/channel/:username"}
+              >
+                <LogoColorIcon />
+              </Link>
+              <div className="pl-2 w-full">
+                <div className="flex gap-2 items-end">
+                  <Link
+                    to={"/channel/:username"}
+                    className="block font-semibold text-xl"
+                  >
+                    {msg.name}
+                  </Link>
+                  <p>
+                    {msg.time && new Date(msg.time).toTimeString().slice(0, 5)}
+                  </p>
+                </div>
+                <p className="text-2xl font-medium">{msg.message}</p>
               </div>
-              <p className="text-2xl font-medium">{msg.message}</p>
-            </div>
-          </li>
-        ))}
-        <div ref={messageRef} />
-      </ul>
+            </li>
+          ))}
+          <div ref={messageRef} />
+        </ul>
 
-      <div className="w-full h-[5.8rem] border border-[var(--hover-bg-color)] rounded-xl z-10 text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)]">
-        <input
-          className="w-full h-full px-6 text-2xl"
-          type="text"
-          placeholder="메시지를 입력하세요"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") sendMessage();
-          }}
-        />
+        <div className="w-full h-[5.8rem] border border-[var(--hover-bg-color)] rounded-xl z-10 text-[var(--hover-bg-color)] dark:text-[var(--normal-txt-color)]">
+          <input
+            className="w-full h-full px-6 text-2xl"
+            type="text"
+            placeholder="메시지를 입력하세요"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") sendMessage();
+            }}
+          />
+        </div>
       </div>
     </div>
   );

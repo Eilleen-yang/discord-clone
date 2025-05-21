@@ -23,7 +23,7 @@ export default function Channel() {
       <div>
         <Link
           className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
-          to={"/server"}
+          to={"/channels/:@me"}
         >
           <Logo />
         </Link>

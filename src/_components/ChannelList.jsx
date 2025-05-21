@@ -4,8 +4,10 @@ import { Button } from "@material-tailwind/react";
 import { useChannelNameStore } from "../stores/useChannelNameStore";
 import { useEffect } from "react";
 import { CircleIcon } from "./icons/channel";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ChannelList({ onClick }) {
+  const navigate = useNavigate();
   const { loadServerChannels, updateSeletedServerName } = useChannelNameStore(
     (state) => state.actions
   );
@@ -26,30 +28,34 @@ export default function ChannelList({ onClick }) {
           key={channel.serverId}
           onClick={() => handleClick(channel.serverName)}
         >
-          <Tooltip
-            content={channel.serverName}
-            placement="right"
-            className="text-[var(--hover-bg-color)] bg-white text-lg px-4 py-2 rounded-lg shadow-lg"
-          >
-            <div className="relative flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl">
-              <Button
-                color="gray"
-                size="sm"
-                className="p-2 min-w-0 rounded-lg"
-                ripple={true}
-              >
-                <Logo />
-              </Button>
-            </div>
-          </Tooltip>
+          <Link to={`/channels/${channel.serverId}`}>
+            <Tooltip
+              content={channel.serverName}
+              placement="right"
+              className="text-[var(--hover-bg-color)] bg-white text-lg px-4 py-2 rounded-lg shadow-lg"
+            >
+              <div className="relative flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl">
+                <Button
+                  color="gray"
+                  size="sm"
+                  className="p-2 min-w-0 rounded-lg"
+                  ripple={true}
+                >
+                  <Logo />
+                </Button>
+              </div>
+            </Tooltip>
+          </Link>
         </li>
       ))}
-      <button
-        onClick={onClick}
-        className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
-      >
-        <CircleIcon width={18} height={18} />
-      </button>
+      <li>
+        <button
+          onClick={onClick}
+          className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
+        >
+          <CircleIcon width={18} height={18} />
+        </button>
+      </li>
     </ul>
   );
 }

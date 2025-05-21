@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ServerRoomList from "../_components/Channel";
+import Channel from "../_components/Channel";
 
 const router = createBrowserRouter([
   {
@@ -8,8 +8,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "server",
-        element: <ServerRoomList />,
+        path: "channels/@me",
+        element: <Channel />,
+      },
+      {
+        path: "channels/:serverId",
+        element: <Channel />,
       },
     ],
   },

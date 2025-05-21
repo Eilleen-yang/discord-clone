@@ -3,11 +3,14 @@ import { CircleIcon } from "./icons/channel";
 import { Logo } from "./icons/logo";
 import { useOverlay } from "@toss/use-overlay";
 import ServerAddModal from "./ServerAddModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loadServerChannel } from "../utils/saveServerChannel";
 import ChannelList from "./ChannelList";
+import { useChannelNameStore } from "../stores/useChannelNameStore";
 
-export default function Channel({ initialValues }) {
+export default function Channel() {
+  const { loadServerChannels } = useChannelNameStore((state) => state.actions);
+
   const { open } = useOverlay();
   const handleServerAddClick = () => {
     open(({ isOpen, close }) => (
@@ -26,15 +29,7 @@ export default function Channel({ initialValues }) {
         </Link>
       </div>
       <div className="px-6 border-b border-[var(--hover-bg-color)]"></div>
-      <ul className="w-full flex flex-col items-center gap-2">
-        <ChannelList initialValues={initialValues} />
-        <button
-          onClick={handleServerAddClick}
-          className="flex items-center justify-center w-[40px] h-[40px] bg-[var(--hover-bg-color)] hover:bg-[var(--main-color)] rounded-xl"
-        >
-          <CircleIcon width={18} height={18} />
-        </button>
-      </ul>
+      <ChannelList onClick={handleServerAddClick} />
     </div>
   );
 }

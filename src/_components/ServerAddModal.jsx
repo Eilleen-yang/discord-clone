@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { saveServerChannel } from "../utils/saveServerChannel";
+import { useChannelNameStore } from "../stores/useChannelNameStore";
 
 export default function ServerAddModal({ isOpen, close }) {
   const [serverName, setServerName] = useState("");
+  const { addServerChannel } = useChannelNameStore((state) => state.actions);
 
   const onServerAddSubmit = (e) => {
     e.preventDefault();
@@ -11,9 +12,8 @@ export default function ServerAddModal({ isOpen, close }) {
       serverId: Date.now(),
       serverName,
     };
-    saveServerChannel(serverChannelData);
+    addServerChannel(serverChannelData);
     close();
-    window.location.reload();
     console.log("성공", serverName);
   };
 
